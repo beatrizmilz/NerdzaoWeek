@@ -6,7 +6,21 @@
  See https://emitanaka.github.io/ninja-theme/kunoichi-theme-example.html for an example.
 
 ******************/
-
+div.my-footer {
+    background-color: #ba68c8;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 45px;
+    width: 100%;
+}
+div.my-footer span {
+    font-size: 12pt;
+    color: #FFFFFF;
+    position: absolute;
+    left: 15px;
+    bottom: 12px;
+}
 
 :root {
     --main-color1: rgba(86,36,87,1);
@@ -31,7 +45,7 @@
     --color-opacity50: rgba(86,36,87,0.5);
     --color-opacity30: rgba(86,36,87,0.3);
     --logo: url("https://emitanaka.github.io/ninja-theme/images/R-LadiesGlobal-transparent.png");
-    --logo: url("docs/img/nerdzao.png");
+    --logo: url("https://s3.amazonaws.com/media-p.slid.es/uploads/987341/images/5658780/nerdzao.png");
 }
 
 .title-slide {
