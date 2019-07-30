@@ -1,7 +1,7 @@
 ---
 # Para transformar em PDF, usar: pagedown::chrome_print("docs/index.html")
 title: "Dashboards, gráficos, mapas: Possibilidades de visualização de dados com R"
-subtitle: "#NERDZÃOWEEK <BR> bit.ly/xxxxx"
+subtitle: "#NERDZÃOWEEK <BR> bit.ly/neRdzao"
 author: "Beatriz Milz"
 date: "02/08/2019"
 output:
@@ -17,7 +17,7 @@ layout: true
   
 <div class="my-footer"><span>
 
-twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - palestra disponível em: <a href="https://">bit.ly/xxx</a>
+twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - palestra disponível em: <a href="https://bit.ly/neRdzao">bit.ly/neRdzao</a>
 </span></div> 
 
 ---
@@ -44,7 +44,7 @@ knitr::include_graphics("img/logos_bia.png")
   - Mestre em Ciências - UNIFESP
   - Bacharel em Gestão Ambiental - EACH/USP
   
-- Co-organizadora - R-Ladies São Paulo
+- Co-organizadora - [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
 
 
 ---
@@ -53,11 +53,8 @@ class:  center
 ```{r, out.width="15%", fig.cap="<center><b>Logo - R-Ladies </center></b>"}
 knitr::include_graphics("img/hexlogorladies.jpeg")
 ```
---
 
 - R-Ladies é uma organização mundial que **promove a diversidade de gênero** na comunidade da linguagem R.
-
---
 
 - R-Ladies São Paulo integra, orgulhosamente, a organização R-Ladies Global, em São Paulo. 
 
@@ -68,12 +65,12 @@ knitr::include_graphics("img/hexlogorladies.jpeg")
 --
 
 - Saiba mais:
-- Website RLadies Global: [https://rladies.org/](https://rladies.org/)
-- Twitter: [@RLadiesGlobal](https://twitter.com/rladiesglobal), [@RLadiesSaoPaulo](https://twitter.com/RLadiesSaoPaulo)
-- Instagram: [@RLadiesSaoPaulo](http://instagram.com/RLadiesSaoPaulo)
-- Facebook: [@RLadiesSaoPaulo](http://facebook.com/RLadiesSaoPaulo)
-- MeetUp: [https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
-- Github: [https://github.com/rladies/meetup-presentations_sao-paulo](https://github.com/rladies/meetup-presentations_sao-paulo)
+  - Website RLadies Global: [https://rladies.org/](https://rladies.org/)
+  - Twitter: [@RLadiesGlobal](https://twitter.com/rladiesglobal), [@RLadiesSaoPaulo](https://twitter.com/RLadiesSaoPaulo)
+  - Instagram: [@RLadiesSaoPaulo](http://instagram.com/RLadiesSaoPaulo)
+  - Facebook: [@RLadiesSaoPaulo](http://facebook.com/RLadiesSaoPaulo)
+  - MeetUp: [https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
+  - Github: [https://github.com/rladies/meetup-presentations_sao-paulo](https://github.com/rladies/meetup-presentations_sao-paulo)
 
 ---
 class: middle, center
@@ -107,9 +104,6 @@ class: middle, center
 
 ## 4 - Onde estudar?
 
---
-O R é uma linguagem de programação muito utilizada para análise de dados. Existem diversas bibliotecas utilizadas para visualização de dados, como dashboards, apresentações, relatórios dinâmicos, gráficos e mapas interativos. O objetivo desta palestra é apresentar algumas possibilidades de visualização de dados com R.
-
 ---
 class: middle
 
@@ -125,23 +119,61 @@ class: middle
 knitr::include_graphics("img/R_logo.svg.png")
 ```
 
-
 ---
 class: middle
 
-```{r, out.width="50%", fig.cap="<center><b>Illustration by Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/status/1066382489080389633'> @allison_horst</a> </b></center><br> Descrição: Ilustração mostrando duas cenas: na primeira, o personagem ele está com medo e o R é uma criatura do mal, e está escrito a frase 'no princípio, era tipo..'; na segunda, personagem aparece alegre e comprimentando o R, e está escrito a frase '..mas agora é tipo..'"}
+```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
 knitr::include_graphics("img/allisonhorst/principio_agora_pt.png")
 ```
 
 ---
 class: middle
 
-
----
-class: middle
 # Pacotes
 
 - Os pacotes são bibliotecas que contém funções e bases de dados.
+
+  - [**CRAN** - The Comprehensive R Archive Network](https://cran.r-project.org/web/packages/)
+     + Mais de 14.600 pacotes disponíveis  
+     
+  - [**Bioconductor** - Open Source Software for Bioinformatics](https://www.bioconductor.org/)
+     + Mais de 1.700 pacotes disponíveis 
+     
+  - [**Github**](https://github.com/)
+     + Quantidade desconhecida!
+
+--
+- **Quais são os principais pacotes para visualização de dados?**
+
+
+
+---
+class: middle
+- Shiny - dashboards
+- flexdashboards
+- Rmarkdown 
+- ggplot2 - graficos
+- highcharter - graficos
+- xaringan - apresentacoes
+- leaflet - mapas
+- bookdown - livros
+
+---
+class: middle
+
+# Pacote rmarkdown
+
+```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote rmarkdown</a></b></center>"}
+knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
+```
+
+- Mantido pela [RStudio](https://rmarkdown.rstudio.com/)
+
+- extensão `.Rmd`
+
+- Possibilita a utilização de códigos R, Markdown, HTML e outros.
+
+
 
 
 ---
@@ -149,10 +181,17 @@ class: middle
 
 O R é uma linguagem de programação muito utilizada para análise de dados. Existem diversas bibliotecas utilizadas para visualização de dados, como dashboards, apresentações, relatórios dinâmicos, gráficos e mapas interativos. O objetivo desta palestra é apresentar algumas possibilidades de visualização de dados com R.
 
+Exemplo de shiny: https://apps.garrickadenbuie.com/user-2019/
+---
+class: middle
+```{r, out.width="95%", fig.cap="<center><b>Fonte: <a href='https://www.data-to-viz.com/'>From Data to Viz</a></b></center>"}
+knitr::include_graphics("img/from-data-to-viz.png")
+```
+
 ---
 class: middle
 
-```{r, out.width="70%", fig.cap="<center><b>Illustration by Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/status/1066382489080389633'> @allison_horst</a> </center></b>"}
+```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
 knitr::include_graphics("img/allisonhorst/community1.jpg")
 ```
 
@@ -172,6 +211,7 @@ knitr::include_graphics("img/nerdzao.png")
   - Webpage: https://beatrizmilz.com
   - Github: <a href="http://github.com/beatrizmilz">@beatrizmilz</a>
   - Twitter: <a href="http://twitter.com/beatrizmilz">@BeaMilz</a> 
+  - Linkedin: <a href="https://www.linkedin.com/in/beatrizmilz">Beatriz Milz</a>
 
 
 - Apresentação feita com [Xaringan](https://github.com/yihui/xaringan) e [Kunoichi](https://github.com/emitanaka/ninja-theme).
