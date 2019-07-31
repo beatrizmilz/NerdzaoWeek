@@ -17,7 +17,7 @@ layout: true
   
 <div class="my-footer"><span>
 
-twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - palestra disponível em: <a href="https://bit.ly/neRdzao">bit.ly/neRdzao</a>
+Twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - Palestra disponível em: <a href="https://bit.ly/neRdzao">bit.ly/neRdzao</a>
 </span></div> 
 
 ---
@@ -199,6 +199,21 @@ class: middle
 ```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
 knitr::include_graphics("img/allisonhorst/ggplot2_obra_prima_pt.png")
 ```
+---
+class: middle
+
+# Pacote ggplot2
+
+```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote ggplot2</a></b></center>"}
+knitr::include_graphics("img/rlogos/hex-ggplot2.png")
+```
+
+- Mantido pela [RStudio](https://rmarkdown.rstudio.com/)
+
+- Criado pelo [Hadley Wickham](http://hadley.nz/)
+
+- Possibilita a criação de diversos tipos de gráficos
+
 
 ---
 class: middle
@@ -305,13 +320,12 @@ h <- highchart() %>%
 ---
 class: middle
 
-# ggplot2 e mapas
+# Pacote rmarkdown
 
-
-```{r, cache = TRUE, fig.cap="<center><b> Fonte: <a href='https://rkabacoff.github.io/datavis/Interactive.html'>Adaptado de Datavis with R </a></b></center>", out.width="45%"}
-
-
+```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
+knitr::include_graphics("img/allisonhorst/rmarkdown_wizards.png")
 ```
+
 
 ---
 class: middle
@@ -327,8 +341,6 @@ knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
 - extensão `.Rmd`
 
 - Possibilita a utilização de códigos R, Markdown, HTML e outros.
-
-
 
 
 ---
