@@ -23,7 +23,7 @@ twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - palestra disponív
 ---
 class:  center, middle
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message=FALSE, warning=FALSE)
 ```
 
 
@@ -125,13 +125,36 @@ class: middle
 ```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
 knitr::include_graphics("img/allisonhorst/principio_agora_pt.png")
 ```
+---
+
+# O que mudou (para mim)?
+
+--
+```{r, out.width="10%", fig.cap="<center><b>RStudio</center></b>"}
+knitr::include_graphics("img/rstudio.png")
+```
+<br>
+--
+```{r, out.width="10%", fig.cap="<center><b>R-Ladies e comunidades</center></b>"}
+knitr::include_graphics("img/hexlogorladies.jpeg")
+```
+<br>
+--
+```{r, out.width="10%", fig.cap="<center><b>Bolsa de estudos - Curso-R</center></b>"}
+knitr::include_graphics("img/logo-curso-2.png")
+```
+<br>
+--
+```{r, out.width="10%", fig.cap="<center><b>Pacote Tidyverse</center></b>"}
+knitr::include_graphics("img/rlogos/hex-tidyverse.jpg")
+```
 
 ---
 class: middle
 
 # Pacotes
 
-- Os pacotes são bibliotecas que contém funções e bases de dados.
+- "Um pacote R é uma coleção de funções, dados e documentação que amplia os recursos do R base" ([WICKHAM & GROLEMUND, 2017](https://r4ds.had.co.nz/))
 
   - [**CRAN** - The Comprehensive R Archive Network](https://cran.r-project.org/web/packages/)
      + Mais de 14.600 pacotes disponíveis  
@@ -142,13 +165,23 @@ class: middle
   - [**Github**](https://github.com/)
      + Quantidade desconhecida!
 
---
-- **Quais são os principais pacotes para visualização de dados?**
+---
+class: middle
+
+# Tidyverse 
+
+- Os pacotes do [tidyverse](https://www.tidyverse.org/) compartilham uma filosofia comum de dados e programação R, e são projetados para trabalhar juntos naturalmente ([WICKHAM & GROLEMUND, 2017](https://r4ds.had.co.nz/))
+
+```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
+knitr::include_graphics("img/allisonhorst/tidyverse.jpg")
+```
 
 
 
 ---
 class: middle
+
+# **Quais são os principais pacotes para visualização de dados?**
 - Shiny - dashboards
 - flexdashboards
 - Rmarkdown 
@@ -157,6 +190,128 @@ class: middle
 - xaringan - apresentacoes
 - leaflet - mapas
 - bookdown - livros
+
+---
+class: middle
+
+# Pacote ggplot2
+
+```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
+knitr::include_graphics("img/allisonhorst/ggplot2_obra_prima_pt.png")
+```
+
+---
+class: middle
+
+# Exemplos ggplot2 
+
+```{r}
+library(ggplot2)
+library(gganimate)
+library(gapminder)
+theme_set(theme_bw())
+```
+
+```{r message=FALSE, warning=FALSE, out.width="60%", cache = TRUE, fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>adaptado de Data Novia</a></b></center>"}
+p <- ggplot(
+  gapminder, 
+  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  ) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_color_viridis_d() +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  labs(x = "PIB per capita", y = "Expectativa de vida (anos)")
+p
+```
+
+
+---
+class: middle
+
+# Exemplos ggplot2 + gganimate
+```{r, cache = TRUE, fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>adaptado de Data Novia</a></b></center>", out.width="60%"}
+p + transition_time(year) +
+  labs(title = "Ano: {frame_time}")
+```
+
+---
+class: middle
+
+# Exemplos ggplot2 + gganimate
+```{r, cache = TRUE,out.width="60%", fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>adaptado de Data Novia</a></b></center>"}
+p + facet_wrap(~continent) +
+  transition_time(year) +
+  labs(title = "Ano: {frame_time}")
+```
+---
+class: middle
+
+### Exemplos ggplot2 + highcharter
+
+```{r, cache = TRUE, fig.cap="<center><b> Fonte: <a href='https://rkabacoff.github.io/datavis/Interactive.html'>Adaptado de Datavis with R </a></b></center>", out.width="45%"}
+
+# create interactive line chart
+library(highcharter)
+
+# prepare data
+data(gapminder, package = "gapminder")
+library(dplyr)
+asia <- gapminder %>%
+  filter(continent == "Americas") %>%
+  select(year, country, lifeExp)
+
+# convert to long to wide format
+library(tidyr)
+plotdata <- spread(asia, country, lifeExp)
+
+# generate graph
+h <- highchart() %>% 
+  hc_xAxis(categories = plotdata$year) %>% 
+  hc_add_series(name = "Brasil", 
+                data = plotdata$Brazil) %>% 
+  hc_add_series(name = "Argentina", 
+                data = plotdata$Argentina) %>%
+  hc_add_series(name = "Paraguai", 
+                data = plotdata$Paraguay) %>%
+  hc_add_series(name = "Uruguai", 
+                data = plotdata$Uruguay) %>%
+
+  hc_title(text = "Expectativa de vida por País - Mercosul",
+           margin = 20, 
+           align = "left",
+           style = list(color = "steelblue")) %>% 
+  hc_subtitle(text = "1952 à 2007",
+              align = "left",
+              style = list(color = "#2b908f", 
+                           fontWeight = "bold")) %>% 
+  hc_credits(enabled = TRUE, # add credits
+             text = "Gapminder Data",
+             href = "http://gapminder.com") %>% 
+  hc_legend(align = "left", 
+            verticalAlign = "top",
+            layout = "vertical", 
+            x = 0, 
+            y = 100) %>%
+  hc_tooltip(crosshairs = TRUE, 
+             backgroundColor = "#FCFFC5",
+             shared = TRUE, 
+             borderWidth = 4) %>% 
+  hc_exporting(enabled = TRUE)
+
+  h
+```
+
+---
+class: middle
+
+# ggplot2 e mapas
+
+
+```{r, cache = TRUE, fig.cap="<center><b> Fonte: <a href='https://rkabacoff.github.io/datavis/Interactive.html'>Adaptado de Datavis with R </a></b></center>", out.width="45%"}
+
+
+```
 
 ---
 class: middle
@@ -182,6 +337,11 @@ class: middle
 O R é uma linguagem de programação muito utilizada para análise de dados. Existem diversas bibliotecas utilizadas para visualização de dados, como dashboards, apresentações, relatórios dinâmicos, gráficos e mapas interativos. O objetivo desta palestra é apresentar algumas possibilidades de visualização de dados com R.
 
 Exemplo de shiny: https://apps.garrickadenbuie.com/user-2019/
+---
+class: middle
+
+# Algumas referências... 
+
 ---
 class: middle
 ```{r, out.width="95%", fig.cap="<center><b>Fonte: <a href='https://www.data-to-viz.com/'>From Data to Viz</a></b></center>"}
