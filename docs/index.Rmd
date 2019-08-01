@@ -377,7 +377,7 @@ class: middle
 # Pacote Shiny
 
 ```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://shiny.rstudio.com/'>Pacote Shiny</a></b></center>"}
-knitr::include_graphics("img/rlogos/hex-shiny.jpg")
+knitr::include_graphics("img/rlogos/hex-shiny3.jpg")
 ```
 
 - Mantido pela [RStudio](https://rstudio.com/)
