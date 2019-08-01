@@ -176,20 +176,17 @@ class: middle
 knitr::include_graphics("img/allisonhorst/tidyverse.jpg")
 ```
 
+---
+class: middle
 
-
+# O ciclo da ciência de dados
+```{r, out.width="100%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>"}
+knitr::include_graphics("img/allisonhorst/data-analysis.jpg")
+```
 ---
 class: middle
 
 # **Quais são os principais pacotes para visualização de dados?**
-- Shiny - dashboards
-- flexdashboards
-- Rmarkdown 
-- ggplot2 - graficos
-- highcharter - graficos
-- xaringan - apresentacoes
-- leaflet - mapas
-- bookdown - livros
 
 ---
 class: middle
@@ -332,7 +329,7 @@ class: middle
 
 # Pacote rmarkdown
 
-```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote rmarkdown</a></b></center>"}
+```{r, out.width="25%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote rmarkdown</a></b></center>"}
 knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
 ```
 
@@ -342,11 +339,77 @@ knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
 
 - Possibilita a utilização de códigos R, Markdown, HTML e outros.
 
+- Útil para relatórios dinâmicos!
+
+- Confira a [Galeria](https://rmarkdown.rstudio.com/gallery.html)!
+
+
+---
+class: middle
+
+# Pacote rmarkdown
+
+```{r, out.width="60%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote rmarkdown</a></b></center>"}
+knitr::include_graphics("img/RMarkdownOutputFormats.png")
+```
+
+
+---
+class: middle
+
+# Pacote xaringan
+
+```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://github.com/yihui/xaringan'>Pacote xaringan</a></b></center>"}
+knitr::include_graphics("img/rlogos/hex-xaringan.png")
+```
+
+- Possibilita criar apresentações **ninja** com R Markdown
+
+- Utiliza a biblioteca remark.js
+
+---
+class: middle
+
+# Pacote Shiny
+
+```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://shiny.rstudio.com/'>Pacote Shiny</a></b></center>"}
+knitr::include_graphics("img/rlogos/hex-shiny.jpg")
+```
+
+- Dashboards interativos
+
+- Confira a [Galeria](https://shiny.rstudio.com/gallery/)!
+
+---
+class: middle
+# Como o Shiny funciona ?
+
+```{r, out.width="70%", fig.cap="<center><b>Fonte: Apresentação de <a href='https://deanattali.com/blog/building-shiny-apps-tutorial/'> Dean Attali</a> </b></center>"}
+knitr::include_graphics("img/what_is_shiny.png")
+```
+
+---
+class: middle
+
+# Exemplo de Shiny
+
+```{r, out.width="100%", fig.cap="<center><b>GIF: Demonstração de um  <a href='https://beatriz-milz.shinyapps.io/pesquisa_periodicos/'>Shiny de consulta de Periódicos</a> </b></center>"}
+
+knitr::include_graphics("img/periodicos_exemplo.gif")
+```
+
 
 ---
 class: middle
 
 O R é uma linguagem de programação muito utilizada para análise de dados. Existem diversas bibliotecas utilizadas para visualização de dados, como dashboards, apresentações, relatórios dinâmicos, gráficos e mapas interativos. O objetivo desta palestra é apresentar algumas possibilidades de visualização de dados com R.
+
+- Shiny - dashboards
+- flexdashboards
+- xaringan - apresentacoes
+- leaflet - mapas
+- bookdown - livros
+
 
 Exemplo de shiny: https://apps.garrickadenbuie.com/user-2019/
 ---
