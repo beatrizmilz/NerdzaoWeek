@@ -1,7 +1,7 @@
 ---
 # Para transformar em PDF, usar: pagedown::chrome_print("docs/index.html")
 title: "Dashboards, gráficos, mapas: Possibilidades de visualização de dados com R"
-subtitle: "#NERDZÃOWEEK <BR> bit.ly/neRdzao"
+subtitle: "#NERDZÃOWEEK <BR> bit.ly/NeRdzao"
 author: "Beatriz Milz"
 date: "02/08/2019"
 output:
@@ -17,7 +17,7 @@ layout: true
   
 <div class="my-footer"><span>
 
-Twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - Palestra disponível em: <a href="https://bit.ly/neRdzao">bit.ly/neRdzao</a>
+Twitter: <a href="https://twitter.com/BeaMilz">@BeaMilz</a> - Palestra disponível em: <a href="https://bit.ly/NeRdzao">bit.ly/NeRdzao</a>
 </span></div> 
 
 ---
