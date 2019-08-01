@@ -1,7 +1,7 @@
 ---
 # Para transformar em PDF, usar: pagedown::chrome_print("docs/index.html")
-title: "Dashboards, gráficos, mapas: Possibilidades de visualização de dados com R"
-subtitle: "#NERDZÃOWEEK <BR> bit.ly/NeRdzao"
+title: "Dashboards, gráficos, mapas: Possibilidades de visualização de dados com R<BR>"
+subtitle: "#NERDZÃOWEEK <BR><BR> bit.ly/NeRdzao"
 author: "Beatriz Milz"
 date: "02/08/2019"
 output:
@@ -128,7 +128,7 @@ knitr::include_graphics("img/allisonhorst/principio_agora_pt.png")
 ---
 
 # O que mudou (para mim)?
-
+<BR>
 --
 ```{r, out.width="10%", fig.cap="<center><b>RStudio</center></b>"}
 knitr::include_graphics("img/rstudio.png")
@@ -139,15 +139,17 @@ knitr::include_graphics("img/rstudio.png")
 knitr::include_graphics("img/hexlogorladies.jpeg")
 ```
 <br>
---
-```{r, out.width="10%", fig.cap="<center><b>Bolsa de estudos - Curso-R</center></b>"}
-knitr::include_graphics("img/logo-curso-2.png")
-```
-<br>
+
 --
 ```{r, out.width="10%", fig.cap="<center><b>Pacote Tidyverse</center></b>"}
 knitr::include_graphics("img/rlogos/hex-tidyverse.jpg")
 ```
+<br>
+
+--
+
+<center><b>Bolsas de diversidade/Diversity Scholarships</center></b>
+
 
 ---
 class: middle
@@ -205,7 +207,7 @@ class: middle
 knitr::include_graphics("img/rlogos/hex-ggplot2.png")
 ```
 
-- Mantido pela [RStudio](https://rmarkdown.rstudio.com/)
+- Mantido pela [RStudio](https://rstudio.com/)
 
 - Criado pelo [Hadley Wickham](http://hadley.nz/)
 
@@ -224,7 +226,7 @@ library(gapminder)
 theme_set(theme_bw())
 ```
 
-```{r message=FALSE, warning=FALSE, out.width="60%", cache = TRUE, fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>adaptado de Data Novia</a></b></center>"}
+```{r message=FALSE, warning=FALSE, out.width="60%", cache = TRUE, fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>Adaptado de Data Novia</a></b></center>"}
 p <- ggplot(
   gapminder, 
   aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
@@ -242,7 +244,7 @@ p
 class: middle
 
 # Exemplos ggplot2 + gganimate
-```{r, cache = TRUE, fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>adaptado de Data Novia</a></b></center>", out.width="60%"}
+```{r, cache = TRUE, fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>Adaptado de Data Novia</a></b></center>", out.width="60%"}
 p + transition_time(year) +
   labs(title = "Ano: {frame_time}")
 ```
@@ -251,7 +253,7 @@ p + transition_time(year) +
 class: middle
 
 # Exemplos ggplot2 + gganimate
-```{r, cache = TRUE,out.width="60%", fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>adaptado de Data Novia</a></b></center>"}
+```{r, cache = TRUE,out.width="60%", fig.cap="<center><b>Fonte: <a href='https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/'>Adaptado de Data Novia</a></b></center>"}
 p + facet_wrap(~continent) +
   transition_time(year) +
   labs(title = "Ano: {frame_time}")
@@ -333,7 +335,7 @@ class: middle
 knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
 ```
 
-- Mantido pela [RStudio](https://rmarkdown.rstudio.com/)
+- Mantido pela [RStudio](https://rstudio.com/)
 
 - extensão `.Rmd`
 
@@ -367,6 +369,8 @@ knitr::include_graphics("img/rlogos/hex-xaringan.png")
 
 - Utiliza a biblioteca remark.js
 
+- Resultado em HTML (mas também PDF - estático)
+
 ---
 class: middle
 
@@ -375,6 +379,8 @@ class: middle
 ```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://shiny.rstudio.com/'>Pacote Shiny</a></b></center>"}
 knitr::include_graphics("img/rlogos/hex-shiny.jpg")
 ```
+
+- Mantido pela [RStudio](https://rstudio.com/)
 
 - Dashboards interativos
 
@@ -398,30 +404,54 @@ class: middle
 knitr::include_graphics("img/periodicos_exemplo.gif")
 ```
 
+---
+class: middle
+
+# Exemplo de Shiny
+
+```{r, out.width="100%", fig.cap="<center><b>GIF: Demonstração de um  <a href='https://apps.garrickadenbuie.com/user-2019/'>Shiny com Tweets sobre a useR!2019 Conf. </a> </b></center>"}
+
+knitr::include_graphics("img/user2019shiny.gif")
+```
 
 ---
 class: middle
 
-O R é uma linguagem de programação muito utilizada para análise de dados. Existem diversas bibliotecas utilizadas para visualização de dados, como dashboards, apresentações, relatórios dinâmicos, gráficos e mapas interativos. O objetivo desta palestra é apresentar algumas possibilidades de visualização de dados com R.
+# Pacote leaflet
 
-- Shiny - dashboards
-- flexdashboards
-- xaringan - apresentacoes
-- leaflet - mapas
-- bookdown - livros
+```{r, out.width="40%", fig.cap="<center><b>Logo: <a href='https://leafletjs.com/'>Biblioteca Leaflet</a></b></center>"}
+knitr::include_graphics("img/logo-leaflet.svg")
+```
+
+- Mantido pela [RStudio](https://rstudio.com/)
+
+- É uma biblioteca javascript para criação de mapas interativos. 
+
+- O [pacote leaflet do R](https://rstudio.github.io/leaflet/) é um htmlwidget que permite gerar esses mapas de forma direta no R, para usar em documentos RMarkdown e Shiny.
 
 
-Exemplo de shiny: https://apps.garrickadenbuie.com/user-2019/
+Fonte: [Post no blog da Curso-R](https://www.curso-r.com/blog/2017-02-21-markercluster/)
+
+
 ---
 class: middle
 
-# Algumas referências... 
+# Exemplo - leaflet + Shiny
+
+```{r, out.width="100%", fig.cap="<center><b>GIF: Demonstração do  <a href='http://shiny.rstudio.com/gallery/superzip-example.html'>Shiny Super Zip Explorer</a> </b></center>"}
+
+knitr::include_graphics("img/shinyleaflet.gif")
+```
+
+- Código disponível no [Github - RStudio](https://github.com/rstudio/shiny-examples/tree/master/063-superzip-example)
 
 ---
 class: middle
-```{r, out.width="95%", fig.cap="<center><b>Fonte: <a href='https://www.data-to-viz.com/'>From Data to Viz</a></b></center>"}
+
+```{r, out.width="95%", fig.cap="<center><b>Fonte: <a href='https://www.data-to-viz.com/'>From Data to Viz</a> </b></center>"}
 knitr::include_graphics("img/from-data-to-viz.png")
 ```
+
 
 ---
 class: middle
